@@ -64,8 +64,7 @@ apt-get update && apt-get install -y freeswitch-meta-all
 - google play <https://play.google.com/store/apps/details?id=com.zoiperpremium.android.app&pcampaignid=MKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1>
 - apple store <https://itunes.apple.com/us/app/id787863350?mt=8>
 
-## 开发文档
+### 开发文档
 - documentation <https://www.zoiper.com/documentation/zoiper-com-api/v1.1/>
 - 示例      <https://www.zoiper.com/documentation/Zoiper3-API-Examples/Zoiper3_Delphi_COM_API_Example_v1.0.zip>
-
 
