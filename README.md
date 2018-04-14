@@ -1,7 +1,8 @@
 # freeSWITCH
 
-- [install](install.md)
-- [start](install.md)
+## [install](install.md)
+## [start](start.md)
+## [note](note.md)
 
 
 ## 什么是 `FreeSWITCH` ？

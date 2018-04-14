@@ -126,7 +126,13 @@ Domain: 你的IP地址，就是刚才你记住的那个
     <X-PRE-PROCESS cmd="set" data="default_password=your password"/>
 ```
 ### `freeswitch`在多网卡服务器下如何指定`IP`地址
-#### `FreeSWITCH\conf\sip_profiles\internal.xml` 修改
+
+修改`FreeSWITCH\conf\var.xml`，添加`local_ip_v4=your ip`覆盖默认值
+```xml
+<X-PRE-PROCESS cmd="set" data="local_ip_v4=your ip"/>
+```
+
+或修改`FreeSWITCH\conf\sip_profiles\internal.xml` 
 ```xml
     <!-- ip address to use for rtp, DO NOT USE HOSTNAMES ONLY IP ADDRESSES -->
     <param name="rtp-ip" value="$${local_ip_v4}"/>
