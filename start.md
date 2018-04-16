@@ -155,3 +155,50 @@ Domain: 你的IP地址，就是刚才你记住的那个
 ```
 
 重启`FreeSWITCH`，开始测试。
+
+### FreeSwitch中的会议功能
+FreeSwitch 默认支持会议功能，有如下特点：
+
+- 不需要创建一个会议室的操作，只需要通过 conference 拨码计划就可以实现;
+- 会议室不真正存在， 直到有人呼入为止；
+- 会议功能很强大，能实现灵活控制。
+
+步骤如下：
+1. 运行 FREESWITCH 服务器程序；
+2. 注册 1000、1001、1002三部IP话机；
+3. 通过 1000 呼叫 3000，通话建立后， 1000 将听到一段保持音乐；
+4. 通过 1001 呼叫 3000，通话建立后， 1001将能听到1000的声音，1000也能听到1001的声音；
+5. 通过 1002 呼叫 3000，通话建立后，  1002将能听到 1000 和 1001的声音，1001能听到1000和1002的声音，1000也能听到 1001 和 1002 的声音。
+
+```xml
+<!--
+start a dynamic conference with the settings of the "default" conference profile in conference.conf.xml
+-->
+    <extension name="nb_conferences">
+      <condition field="destination_number" expression="^(30\d{2})$">
+        <action application="answer"/>
+        <action application="conference" data="$1-${domain_name}@default"/>
+      </condition>
+    </extension>
+
+```
+
+#### 设置会议主持人
+```xml
+<!-- 未设置主持人 -->
+<action application="conference" data="$1@default"/>
+
+<!-- 设置了主持人 -->
+<action application="conference" data="$1@default+flags{moderator}"/> 
+```
+
+####　设置会议密码
+```xml
+ <!-- // 设置入会密码为 1234 -->
+<action application=”conference” data="$1@default+1234"/>
+```
+
+#### 设置会议主持人和密码
+```xml
+<action application="conference" data="$1@default+1234+flags{moderator}">
+```

@@ -63,3 +63,30 @@ SIP:  INVITE sip:seven@freeswitch.org.cn SIP/2.0
 
 ```
 以`“*”`开头的都是CURL的调试信息，以`“>”`开头的行是客户端向服务器发出的请求，以`“<”`开头的行是服务器对客户端的响应。
+
+## SIP的基本概念和相关元素
+`SIP`是一个`对等`的协议，类似`P2P`。它和`HTTP`不一样，其不是客户端服务器结构的；也不像传统电话那样必须有一个中心的交换机，它可以在不需要服务器的情况下进行通信，只要通信双方都彼此知道对方地址（或者只有一方知道另一方的地址）即可，这种情况称为`点对点通信`。如图7-1所示，Bob给Alice发送一个`INVITE`请求，说“Hi,一起吃饭吧…”，Alice说“好的，OK”，电话就接通了。
+
+![images](images/027.png)
+
+在`SIP`网络中，Alice和Bob都称为用户代理（`User Agent`，`UA`）。`UA`是在`SIP`网络中发起或响应`SIP`处理的逻辑实体。`UA`是有状态的，也就是说，它维护会话（或称对话）的状态。`UA`有两种：一种是`UAC`（`UA Client`），它是发起`SIP`请求的一方，比如图7-1中的Bob；另一种是`UAS`（`UA Server`），它是接受请求并发送响应的一方，比如图7-1中的Alice。由于`SIP`是对等的，当Alice呼叫Bob时，Alice就称为UAC，而Bob则实现UAS的功能。一般来说，UA都会实现上述两种功能。
+
+- 代理服务器（Proxy Server）
+- 重定向服务器（Redirect Server）
+- 注册服务器
+- 背靠背用户代理（Back-to-Back UA，B2BUA）
+
+![images](images/028.png)
+
+- 边界会话控制器（Session Border Controller，SBC）。
+
+![images](images/029.png)
+
+## SIP协议的基本方法和头域简介
+### 基本方法
+![images](images/030.png)
+
+#### 头域
+![images](images/031.png)
+
+## SIP注册
