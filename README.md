@@ -4,9 +4,10 @@
 ## [start](start.md)
 ## [note](note.md)
 ## [SIP协议](SIP协议.md)
+## [SIP模块](SIP模块.md)
 
 
-## 什么是 `FreeSWITCH` ？
+## 什么是 `FreeSWITCH`?
 FreeSWITCH 是一个开源的电话交换平台，它具有很强的可伸缩性--从一个简单的软电话客户端到运营商级的软交换设备几乎无所不能。能原生地运行于Windows、 Max OS X、Linux、BSD 及 solaris 等诸多32/64位平台。可以用作一个简单的交换引擎、一个PBX，一个媒体网关或媒体支持IVR的服务器等。它支持SIP、H323、Skype、Google Talk等协议，并能很容易地与各种开源的PBX系统如sipXecs、Call Weaver、Bayonne、YATE及Asterisk等通信。 FreeSWITCH 遵循RFC并支持很多高级的SIP特性，如 presence、BLF、SLA以及TCP、TLS和sRTP等。它也可以用作一个SBC进行透明的SIP代理（proxy）以支持其它媒体如T.38 等。FreeSWITCH 支持宽带及窄带语音编码，电话会议桥可同时支持8、12、16、24、32及48kHZ的语音. 而在传统的电话网络中，要做到三方通话或多方通话需要通过专门的芯片来处理，其它像预付费，彩铃等业务在PSTN网络中都需要依靠智能网(IN)才能实现，而且配置起来相当不灵活。
 
 ## 快速体验
